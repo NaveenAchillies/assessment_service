@@ -23,3 +23,8 @@ Things you may want to cover:
 
 * ...
 # assessment_service
+# To create database and run specs
+* rails db:create
+* rails db:migrate
+* rails db:seed
+* RAILS_ENV=development bundle exec rspec spec

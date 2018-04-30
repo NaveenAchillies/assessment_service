@@ -35,9 +35,15 @@ class AnswersController < ApplicationController
       end
       formed_params << {:option=>option, :status=>status, :question_id=>question_id, :user_id=>current_user.id}
     }
-    Answer.create(formed_params)
+    answers = Answer.create(formed_params)
     respond_to do |format|
-      format.html { redirect_to '/', notice: 'Answers Submitted.' }
+      if answers.pluck(:id).compact.present?
+        format.html { redirect_to '/', notice: 'Answers Submitted.' }
+        format.json { render json: {success: 'Answers Submitted.'} }
+      else
+        format.html { redirect_to '/', notice: 'Failed' }
+        format.json { render json: {error: 'Failed.'} }
+      end
     end
   end
 
