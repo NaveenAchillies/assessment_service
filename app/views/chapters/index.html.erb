@@ -1,0 +1,13 @@
+<h1><%= @chapter.name%></h1><br><br>
+<%= form_tag('/answers') do |form| %>
+  <% @questions.each_with_index do |question,index| %>
+    <b><%=index+1%> . <%= question.description%></b>
+    <p>
+      <% question.choices.each do |choice| %>
+        <%= radio_button_tag("answer[#{question.id}]", choice.param, false) %>&nbsp;&nbsp;<%=choice.param%>
+      <% end %>
+      <%= radio_button_tag("answer[#{question.id}]", "skip", false) %>&nbsp;SKIP
+    </p>  
+  <% end %>
+  <%= submit_tag 'Submit', :class => 'btn btn-primary'%>
+<% end %>

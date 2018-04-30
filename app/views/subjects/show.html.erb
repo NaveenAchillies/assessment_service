@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th><h1><%= @subject.title%><h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subject.topics.each do |topic| %>
+      <tr>
+        <td><h2><%= link_to "#{topic.title}", topic_path(topic.id) %></h2></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

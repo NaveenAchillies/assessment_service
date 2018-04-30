@@ -1,0 +1,12 @@
+<p>correct(%) : <%=@total_percent['correct'].to_f*100%> </p>
+<p>wrong(%) : <%=@total_percent['wrong'].to_f*100%> </p>
+<h2>total unseen question : <%=@resp['exam'].values.sum%></h2>
+<%@resp.each{|key,value|%>
+	<b>unseen questions in <%=key%> </b>
+	<%value.each{|k,v|%>
+		<p>
+			<b>id: </b> <%=k%> &nbsp;&nbsp;
+			<b>count: </b> <%= v%> 
+		</p>
+	<%}%>
+<%}%>

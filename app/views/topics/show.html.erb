@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th><h1><%= @topic.title%><h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @topic.chapters.each do |chapter| %>
+      <tr>
+        <td>
+          <h2><%=chapter.name%></h2>
+          <p>
+            <%= link_to "easy", chapters_path({:id=>chapter.id,:type=>"easy"}) %>
+            <%= link_to "medium", chapters_path({:id=>chapter.id,:type=>"medium"}) %>
+            <%= link_to "hard", chapters_path({:id=>chapter.id,:type=>"hard"}) %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

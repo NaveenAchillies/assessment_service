@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exams</h1>
+
+<table>
+  <tbody>
+    <% @exams.each do |exam| %>
+      <tr>
+        <td><h2><%= link_to "#{exam.name}", exam_path(exam.id) %></h2></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

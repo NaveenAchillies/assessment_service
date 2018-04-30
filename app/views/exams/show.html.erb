@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th><h1><%= @exam.name%><h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exam.subjects.each do |subject| %>
+      <tr>
+        <td><h2><%= link_to "#{subject.title}", subject_path(subject.id) %></h2></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
