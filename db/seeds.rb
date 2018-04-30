@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(:email => 'test_user@test.com' , :password => 'password' , :password_confirmation => 'password')
 exam = Exam.create(:name=>'test1')
 subjects = exam.subjects.create([{:title=>"Biology"},{:title=>"Chemistry"},{:title=>"Maths"}])
 topics = subjects[0].topics.create([{:title=>"Diversity of Living Organisms"},{:title=>"Cell Structure and Function"},{:title=>"Ecology and Environment"}])
