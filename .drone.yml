@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: ruby:2.0.0
+    image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
     commands:
