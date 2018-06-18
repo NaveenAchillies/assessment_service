@@ -4,10 +4,8 @@ pipeline:
     environment:
       - RAILS_ENV=test
     script:
-      - sleep 15
-      - mkdir -p /tmp/bundler
-      - sudo chown ubuntu:ubuntu /tmp/bundler
-      - bundle install --path=/tmp/bundler --deployment --quiet
+      - sleep 5
+      - bundle install
       - bundle exec rspec spec
 services:
   database:
@@ -17,9 +15,9 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis
-cache:
-  - /tmp/bundler
-notify:
-  email:
-    recipients:
-      - naveen.s@voonik.com
+# cache:
+#   - /tmp/bundler
+# notify:
+#   email:
+#     recipients:
+#       - naveen.s@voonik.com
