@@ -15,9 +15,3 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis
-# cache:
-#   - /tmp/bundler
-# notify:
-#   email:
-#     recipients:
-#       - naveen.s@voonik.com
