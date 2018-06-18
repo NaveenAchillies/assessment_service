@@ -1,0 +1,12 @@
+image: ruby2.0.0
+env:
+  - RAILS_ENV=test
+script:
+  - bundle install
+  - sleep 5
+  - bundle exec rspec spec
+services:
+  database:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=test

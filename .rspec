@@ -1,1 +1,5 @@
+--format progress
+--format documentation
+--color
 --require spec_helper
+--out log/rspec_log.rb
