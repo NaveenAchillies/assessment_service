@@ -1,5 +1,5 @@
 pipeline:
-  build:
+  test:
     image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
