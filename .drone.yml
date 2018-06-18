@@ -1,9 +1,9 @@
 pipeline:
   lok:
-    image: ruby:2.2.3
+    image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
-    script:
+    commands:
       - sleep 5
       - echo "lok"
       - bundle install
