@@ -1,7 +1,7 @@
 pipeline:
   build:
-    image: ruby2.0.0
-    env:
+    image: ruby:2.0.0
+    environment:
       - RAILS_ENV=test
     commands:
       - sleep 5
