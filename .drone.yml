@@ -1,6 +1,6 @@
 pipeline:
-  test:
-    image: ruby:2.2.2
+  lok:
+    image: ruby:2.2.3
     environment:
       - RAILS_ENV=test
     script:
