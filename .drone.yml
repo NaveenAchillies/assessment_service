@@ -1,15 +1,22 @@
 pipeline:
-  lok:
+  ruby_build:
     image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
     commands:
       - sleep 5
-      - echo "lok"
-      - bundle install
+      - mkdir -p /tmp/bundler
+      - sudo chown ubuntu:ubuntu /tmp/bundler
+      - bundle install --path=/tmp/bundler --deployment --quiet
       - bundle exec rspec spec
 services:
   database:
-    image: mysql
+    image: mysql    
+    environment:
+      - MYSQL_DATABASE=assessment_service
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
   redis:
     image: redis
+cache:
+  - /tmp/bundler

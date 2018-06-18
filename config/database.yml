@@ -8,7 +8,7 @@ development:
 
 test:
   adapter: mysql2
-  host: "localhost"
+  host: database
   port: 3306
   username: "root"
   password: ""
