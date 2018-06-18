@@ -10,5 +10,8 @@ pipeline:
 services:
   database:
     image: mysql
+    environment:
+      - MYSQL_DATABASE=assessment_service
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis
