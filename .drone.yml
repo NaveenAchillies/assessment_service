@@ -5,13 +5,11 @@ pipeline:
       - RAILS_ENV=test
     script:
       - sleep 5
+      - echo "lok"
       - bundle install
       - bundle exec rspec spec
 services:
   database:
     image: mysql
-    environment:
-      - MYSQL_DATABASE=assessment_service
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   redis:
     image: redis
