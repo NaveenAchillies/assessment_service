@@ -4,17 +4,16 @@ pipeline:
     environment:
       - RAILS_ENV=test
     commands:
-      - echo $${EMAIL_HOST}
       - bundle install
       - bundle exec rake db:migrate
       - bundle exec rake db:seed
       - bundle exec rspec spec
   notify:
     image: drillster/drone-email
-    host: $EMAIL_HOST
+    host: $${EMAIL_HOST}
     port: 2525
-    username: $EMAIL_USER_NAME
-    password: $EMAIL_PASSWORD
+    username: $${EMAIL_USER_NAME}
+    password: $${EMAIL_PASSWORD}
     from: messages@voonik.com
     recipients: [naveen.s@voonik.com, lokanadham.m@voonik.com]
     secrets: [ email_host, email_port, email_user_name, email_password ]
