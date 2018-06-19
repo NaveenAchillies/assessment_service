@@ -16,7 +16,7 @@ pipeline:
   notify:
     image: drillster/drone-email
     host: $${EMAIL_HOST}
-    port: $${EMAIL_PORT}
+    port: 2525
     username: $${EMAIL_USER_NAME}
     password: $${EMAIL_PASSWORD}
     from: messages@voonik.com
