@@ -15,8 +15,7 @@ pipeline:
     debug: true
     template: |
       '{
-        "text" :
-          "{ \n\t\t \"owner\": \"{{ repo.owner }}\", \n\t\t \"repo\": \"{{ repo.name }}\", \"build_number\": \"{{build.number}}\", \"commit\": \"{{ build.commit }}\", \"branch\": \"{{ build.branch }}\", \"message\": \"{{ build.message }}\", \"author\": \"{{ build.author }}\", \"status\": \"{{ build.status }}\", \"link\": \"{{build.link}}\" }"
+        "text" : "{ \n\t \"owner\": \"{{ repo.owner }}\", \n\t \"repo\": \"{{ repo.name }}\", \"build_number\": \"{{build.number}}\", \"commit\": \"{{ build.commit }}\", \"branch\": \"{{ build.branch }}\", \"message\": \"{{ build.message }}\", \"author\": \"{{ build.author }}\", \"status\": \"{{ build.status }}\", \"link\": \"{{build.link}}\" }"
       }'
 
 services:
