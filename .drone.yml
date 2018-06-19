@@ -11,7 +11,6 @@ pipeline:
   webhook:
     image: plugins/webhook
     urls: https://api.flock.com/hooks/sendMessage/7cdb68f6-b2ca-4703-8529-e445b89aa5cc
-    content_type: application/json
     debug: true
     template: |
       '{
