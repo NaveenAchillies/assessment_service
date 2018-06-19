@@ -25,7 +25,7 @@ pipeline:
 
 services:
   database:
-    image: loka/mysql_lok
+    image: loka/mysql_lok:0.1
     environment:
       - MYSQL_DATABASE=assessment_service
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
