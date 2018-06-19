@@ -15,14 +15,18 @@ pipeline:
     debug: true
     template: |
       {
-        "build_number": "{{build.number}}",
-        "owner": "{{ repo.owner }}",
-        "repo": "{{ repo.name }}",
-        "branch": "{{ build.branch }}",
-        "message": "{{ build }}",
-        "author": "{{ commit.author.name }}",
-        "commit": "{{ build.commit }}",
-        "status": "{{ build.status }}"
+        "text" :
+          {
+            "build_number": "{{build.number}}",
+            "owner": "{{ repo.owner }}",
+            "repo": "{{ repo.name }}",
+            "branch": "{{ build.branch }}",
+            "message": "{{ build.message }}",
+            "author": "{{ build.author }}",
+            "author": "{{ build.author.name }}",
+            "commit": "{{ build.commit }}",
+            "status": "{{ build.status }}"
+          }
       }
 
 services:
