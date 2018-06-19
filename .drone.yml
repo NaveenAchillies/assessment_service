@@ -3,10 +3,15 @@ pipeline:
     image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
+    commands:
+      - bundle install
+      - bundle exec rake db:migrate
+      - bundle exec rake db:seed
+      - bundle exec rspec spec
   notify:
     image: drillster/drone-email
     from: messages@voonik.com
-    recipients: [naveen.s@voonik.com, lokanadham.m@voonik.com]
+    recipients: [naveen.s@voonik.com]
     secrets: [EMAIL_HOST, EMAIL_PORT, EMAIL_USERNAME, EMAIL_PASSWORD]
   webhook:
     image: plugins/webhook
@@ -20,7 +25,7 @@ pipeline:
 
 services:
   database:
-    image: mysql:5.7.14   
+    image: loka/mysql_lok
     environment:
       - MYSQL_DATABASE=assessment_service
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
