@@ -14,9 +14,9 @@ pipeline:
     debug: true
     content_type: application/json
     template: |
-      '{
-        "text" : "{ \n \"owner\": \"{{ repo.owner }}\", \n \"repo\": \"{{ repo.name }}\", \"build_number\": \"{{build.number}}\", \"commit\": \"{{ build.commit }}\", \"branch\": \"{{ build.branch }}\", \"message\": \"{{ build.message }}\", \"author\": \"{{ build.author }}\", \"status\": \"{{ build.status }}\", \"link\": \"{{build.link}}\" }"
-      }'
+      {
+        "text" : "{ \n\t \"owner\": \"{{ repo.owner }}\", \n\t \"repo\": \"{{ repo.name }}\", \n\t \"build_number\": \"{{build.number}}\", \n\t \"commit\": \"{{ build.commit }}\", \n\t \"branch\": \"{{ build.branch }}\",\n\t \"message\": \"{{ build.message }}\", \n\t \"author\": \"{{ build.author }}\", \n\t \"status\": \"{{ build.status }}\",\n\t \"link\": \"{{build.link}}\" }"
+      }
 
 services:
   database:
