@@ -13,12 +13,6 @@ pipeline:
     urls: https://api.flock.com/hooks/sendMessage/7cdb68f6-b2ca-4703-8529-e445b89aa5cc
     content_type: application/json
     debug: true
-    template: |
-      "{\"text\":
-        {
-          \"build_number\":\"39\",\"owner\":\"NaveenAchillies\",\"repo\":\"assessment_service\",\"branch\":\"master\",\"message\":\"no message\",\"author\":\"\",\"commit\":\"4622f41b525131dbbbf3947bd59e05961e429dee\",\"status\":\"success\"
-        }
-      }"
 
 services:
   database:
