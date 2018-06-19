@@ -13,6 +13,21 @@ pipeline:
     urls: https://api.flock.com/hooks/sendMessage/7cdb68f6-b2ca-4703-8529-e445b89aa5cc
     content_type: application/json
     debug: true
+    template: |
+      "{
+        \"text\" :
+          {
+            \"owner\": "{{ repo.owner }}",
+            \"repo\": "{{ repo.name }}",
+            \"build_number\": "{{build.number}}",
+            \"commit\": "{{ build.commit }}",
+            \"branch\": "{{ build.branch }}",
+            \"message\": "{{ build.message }}",
+            \"author\": "{{ build.author }}",
+            \"status\": "{{ build.status }}",
+            \"link\": "{{build.link}}"
+          }
+      }"
 
 services:
   database:
