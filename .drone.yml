@@ -4,7 +4,6 @@ pipeline:
     environment:
       - RAILS_ENV=test
     commands:
-      - sleep 5
       - bundle install
       - bundle exec rspec spec
 services:
