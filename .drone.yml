@@ -10,6 +10,10 @@ pipeline:
       - bundle exec rspec spec
   notify:
     image: drillster/drone-email
+    commands:
+      - echo $${EMAIL_HOST}
+      - echo $${EMAIL_USER_NAME}
+      - echo $${EMAIL_PASSWORD}
     host: $${EMAIL_HOST}
     port: 2525
     username: $${EMAIL_USER_NAME}
