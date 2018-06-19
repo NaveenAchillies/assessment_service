@@ -5,6 +5,7 @@ pipeline:
       - RAILS_ENV=test
     commands:
       - bundle install
+      - bundle exec rake db:seed
       - bundle exec rspec spec
 services:
   database:
