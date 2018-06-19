@@ -14,7 +14,7 @@ pipeline:
     content_type: application/json
     debug: true
     template: |
-      {
+      "{
         "text" :
           {
             "build_number": "{{build.number}}",
@@ -23,11 +23,10 @@ pipeline:
             "branch": "{{ build.branch }}",
             "message": "{{ build.message }}",
             "author": "{{ build.author }}",
-            "author": "{{ build.author.name }}",
             "commit": "{{ build.commit }}",
             "status": "{{ build.status }}"
           }
-      }
+      }"
 
 services:
   database:
