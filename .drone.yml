@@ -14,19 +14,11 @@ pipeline:
     content_type: application/json
     debug: true
     template: |
-      '{
-        "text" :
-          {
-            "build_number": "{{build.number}}",
-            "owner": "{{ repo.owner }}",
-            "repo": "{{ repo.name }}",
-            "branch": "{{ build.branch }}",
-            "message": "{{ build.message }}",
-            "author": "{{ build.author }}",
-            "commit": "{{ build.commit }}",
-            "status": "{{ build.status }}"
-          }
-      }'
+      "{\"text\":
+        {
+          \"build_number\":\"39\",\"owner\":\"NaveenAchillies\",\"repo\":\"assessment_service\",\"branch\":\"master\",\"message\":\"no message\",\"author\":\"\",\"commit\":\"4622f41b525131dbbbf3947bd59e05961e429dee\",\"status\":\"success\"
+        }
+      }"
 
 services:
   database:
