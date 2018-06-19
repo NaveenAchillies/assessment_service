@@ -14,14 +14,16 @@ pipeline:
     content_type: application/json
     template: |
       {
-        "build_number": "{{build.number}}",
-        "owner": "{{ repo.owner }}",
-        "repo": "{{ repo.name }}",
-        "branch": "{{ commit.branch }}",
-        "message": "{{ commit.message }}",
-        "author": "{{ commit.author.name }}",
-        "commit sha": "{{ commit.SHA }}",
-        "status": "{{ build.status }}"
+        "text": {
+          "build_number": "{{build.number}}",
+          "owner": "{{ repo.owner }}",
+          "repo": "{{ repo.name }}",
+          "branch": "{{ commit.branch }}",
+          "message": "{{ commit.message }}",
+          "author": "{{ commit.author.name }}",
+          "commit sha": "{{ commit.SHA }}",
+          "status": "{{ build.status }}"
+        }
       }
 
 services:
