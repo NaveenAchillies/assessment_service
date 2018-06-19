@@ -4,8 +4,8 @@ pipeline:
     environment:
       - RAILS_ENV=test
     commands:
-      - echo $$(HOST_DETAILS)
-      - echo $$(host_details)
+      - echo $HOST_DETAILS
+      - echo $${HOST_DETAILS}
       - bundle install
       - bundle exec rake db:migrate
       - bundle exec rake db:seed
