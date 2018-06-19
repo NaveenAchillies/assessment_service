@@ -3,11 +3,6 @@ pipeline:
     image: ruby:2.2.2
     environment:
       - RAILS_ENV=test
-    commands:
-      - bundle install
-      - bundle exec rake db:migrate
-      - bundle exec rake db:seed
-      - bundle exec rspec spec
   notify:
     image: drillster/drone-email
     from: messages@voonik.com
@@ -26,7 +21,7 @@ pipeline:
         "message": "{{ commit.message }}",
         "author": "{{ commit.author.name }}",
         "commit sha": "{{ commit.SHA }}",
-        "status": "{{ build.status }}",
+        "status": "{{ build.status }}"
       }
 
 services:
