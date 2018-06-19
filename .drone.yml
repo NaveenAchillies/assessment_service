@@ -18,10 +18,10 @@ pipeline:
         "build_number": "{{build.number}}",
         "owner": "{{ repo.owner }}",
         "repo": "{{ repo.name }}",
-        "branch": "{{ commit.branch }}",
-        "message": "{{ commit.message }}",
+        "branch": "{{ build.branch }}",
+        "message": "{{ build }}",
         "author": "{{ commit.author.name }}",
-        "commit sha": "{{ commit.SHA }}",
+        "commit": "{{ build.commit }}",
         "status": "{{ build.status }}"
       }
 
