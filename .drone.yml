@@ -9,7 +9,7 @@ pipeline:
       - bundle exec rspec spec
 services:
   database:
-    image: mysql    
+    image: mysql:5.7.14   
     environment:
       - MYSQL_DATABASE=assessment_service
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
