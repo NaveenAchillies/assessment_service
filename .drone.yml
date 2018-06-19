@@ -17,15 +17,15 @@ pipeline:
       "{
         \"text\" :
           {
-            \"owner\": "{{ repo.owner }}",
-            \"repo\": "{{ repo.name }}",
-            \"build_number\": "{{build.number}}",
-            \"commit\": "{{ build.commit }}",
-            \"branch\": "{{ build.branch }}",
-            \"message\": "{{ build.message }}",
-            \"author\": "{{ build.author }}",
-            \"status\": "{{ build.status }}",
-            \"link\": "{{build.link}}"
+            \"owner\": \"{{ repo.owner }}\",
+            \"repo\": \"{{ repo.name }}\",
+            \"build_number\": \"{{build.number}}\",
+            \"commit\": \"{{ build.commit }}\",
+            \"branch\": \"{{ build.branch }}\",
+            \"message\": \"{{ build.message }}\",
+            \"author\": \"{{ build.author }}\",
+            \"status\": \"{{ build.status }}\",
+            \"link\": \"{{build.link}}\"
           }
       }"
 
