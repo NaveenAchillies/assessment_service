@@ -4,10 +4,13 @@ pipeline:
     environment:
       - RAILS_ENV=test
     commands:
+      - echo $$(HOST_DETAILS)
+      - echo $$(host_details)
       - bundle install
       - bundle exec rake db:migrate
       - bundle exec rake db:seed
       - bundle exec rspec spec
+    secrets: [ host_details ]
 services:
   database:
     image: mysql:5.7.14   
