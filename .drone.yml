@@ -14,9 +14,9 @@ pipeline:
     content_type: application/json
     debug: true
     template: |
-      "{
-        \"text\" :
-          {
+      '{
+        "text" :
+          "{
             \"owner\": \"{{ repo.owner }}\",
             \"repo\": \"{{ repo.name }}\",
             \"build_number\": \"{{build.number}}\",
@@ -26,8 +26,8 @@ pipeline:
             \"author\": \"{{ build.author }}\",
             \"status\": \"{{ build.status }}\",
             \"link\": \"{{build.link}}\"
-          }
-      }"
+          }""
+      }'
 
 services:
   database:
