@@ -12,18 +12,17 @@ pipeline:
     image: plugins/webhook
     urls: https://api.flock.com/hooks/sendMessage/7cdb68f6-b2ca-4703-8529-e445b89aa5cc
     content_type: application/json
+    debug: true
     template: |
       {
-        "text": {
-          "build_number": "{{build.number}}",
-          "owner": "{{ repo.owner }}",
-          "repo": "{{ repo.name }}",
-          "branch": "{{ commit.branch }}",
-          "message": "{{ commit.message }}",
-          "author": "{{ commit.author.name }}",
-          "commit sha": "{{ commit.SHA }}",
-          "status": "{{ build.status }}"
-        }
+        "build_number": "{{build.number}}",
+        "owner": "{{ repo.owner }}",
+        "repo": "{{ repo.name }}",
+        "branch": "{{ commit.branch }}",
+        "message": "{{ commit.message }}",
+        "author": "{{ commit.author.name }}",
+        "commit sha": "{{ commit.SHA }}",
+        "status": "{{ build.status }}"
       }
 
 services:
