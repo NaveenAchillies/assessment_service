@@ -11,6 +11,14 @@ pipeline:
       - bundle exec rake db:seed
       - bundle exec rspec spec
     secrets: [ host_details ]
+  notify:
+    image: drillster/drone-email
+    host: $${email_host}
+    port: $${email_port}
+    username: $${email_user_name}
+    password: $${email_password}
+    from: messages@voonik.com
+    recipients: [naveen.s@voonik.com, lokanadham.m@voonik.com]
 services:
   database:
     image: mysql:5.7.14   
