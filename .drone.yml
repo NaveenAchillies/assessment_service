@@ -14,6 +14,8 @@ pipeline:
     port: 2525
     username: $${EMAIL_USER_NAME}
     password: $${EMAIL_PASSWORD}
+    authentication: plain
+    enable_starttls_auto: true
     from: messages@voonik.com
     recipients: [naveen.s@voonik.com, lokanadham.m@voonik.com]
     secrets: [ email_host, email_port, email_user_name, email_password ]
