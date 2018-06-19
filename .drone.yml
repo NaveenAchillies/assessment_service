@@ -10,19 +10,9 @@ pipeline:
       - bundle exec rspec spec
   notify:
     image: drillster/drone-email
-    commands:
-      - echo $${EMAIL_HOST}
-      - echo $${EMAIL_USER_NAME}
-      - echo $${EMAIL_PASSWORD}
-    host: $${EMAIL_HOST}
-    port: 2525
-    username: $${EMAIL_USER_NAME}
-    password: $${EMAIL_PASSWORD}
-    authentication: plain
-    enable_starttls_auto: true
     from: messages@voonik.com
     recipients: [naveen.s@voonik.com, lokanadham.m@voonik.com]
-    secrets: [ email_host, email_port, email_user_name, email_password ]
+    secrets: [EMAIL_HOST, EMAIL_PORT, EMAIL_USERNAME, EMAIL_PASSWORD]
 services:
   database:
     image: mysql:5.7.14   
