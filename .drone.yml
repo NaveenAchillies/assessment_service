@@ -11,8 +11,7 @@ pipeline:
   notify:
     image: drillster/drone-email
     from: messages@voonik.com
-    recipients: [naveen.s@voonik.com]
-    secrets: [EMAIL_HOST, EMAIL_PORT, EMAIL_USERNAME, EMAIL_PASSWORD]
+    secrets: [EMAIL_HOST, EMAIL_PORT, EMAIL_USERNAME, EMAIL_PASSWORD, EMAIL_RECIPIENTS]
   webhook:
     image: plugins/webhook
     secrets: [WEBHOOK_URLS]
@@ -25,7 +24,7 @@ pipeline:
 
 services:
   database:
-    image: loka/mysql_lok:0.1
+    image: mysql:5.7.14   
     environment:
       - MYSQL_DATABASE=assessment_service
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
